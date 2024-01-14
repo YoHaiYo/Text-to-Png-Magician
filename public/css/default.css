@@ -1,0 +1,13 @@
+@import url("./font.css");
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body, a {
+  color: #333;
+  text-decoration: none;  
+  /* font-family: 'Pretendard-Regular', sans-serif !important; */
+}

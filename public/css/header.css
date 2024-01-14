@@ -1,0 +1,14 @@
+header {
+  background-color: #6FB1FF;
+  display: flex;
+  justify-content: space-between;
+}
+header ul {
+  display: flex;
+  list-style: none;  
+  align-items: center;
+  margin: 0;
+}
+header ul li {
+  margin: 0 1rem;
+}
