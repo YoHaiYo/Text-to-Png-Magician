@@ -96,10 +96,12 @@ const Main = () => {
   };
 
   return (
-    <main>    
+    <main className='d-lg-flex justify-content-center align-item-center mt-lg-5'>    
       <section>
-        <div>
-          <label className='mybasic myoption' htmlFor="textColor">Text Color</label>
+
+        {/* text color btns */}
+        <div className='d-lg-flex'>
+          <label className='mybasic myoption d-block' htmlFor="textColor">Text Color</label>
           <button className="mycolorbtn" style={{backgroundColor: "#F01D1D"}} onClick={() => setTextColor('#F01D1D')}/>
           <button className="mycolorbtn" style={{backgroundColor: "#F09C1D"}} onClick={() => setTextColor('#F09C1D')}/>
           <button className="mycolorbtn" style={{backgroundColor: "#F0E81D"}} onClick={() => setTextColor('#F0E81D')}/>
@@ -107,17 +109,20 @@ const Main = () => {
           <button className="mycolorbtn" style={{backgroundColor: "#3B1DF0"}} onClick={() => setTextColor('#3B1DF0')}/>
           <input className='' type="color" id="textColor" value={textColor} onChange={handleColorChange} />
         </div>
-        <div>
-          <label className='mybasic myoption' htmlFor="textSize">Text Size</label>
+
+        {/* test size btns */}
+        <div className='d-lg-flex'>
+          <label className='mybasic myoption d-block' htmlFor="textSize">Text Size</label>
           <button className="mybasic mybtn__white " onClick={() => setTextSize(50)}>50px</button>
           <button className="mybasic mybtn__white " onClick={() => setTextSize(100)}>100px</button>
           <button className="mybasic mybtn__white " onClick={() => setTextSize(150)}>150px</button>
           <input type="number" id="textSize" value={textSize} onChange={handleSizeChange} />
           <span>px</span>
         </div>
-        <div>
-          <label className='mybasic myoption'>Font Family</label>      
 
+        {/* font family btns */}
+        <div className='d-lg-flex'>
+          <label className='mybasic myoption d-block'>Font Family</label>      
           {/* `ssh 얘는 넣을게 많으니 배열로 빼서 map으로 처리하기 */}
           {
             fontdata.map((el, idx)=> {
@@ -129,16 +134,17 @@ const Main = () => {
               )
             })
           }
-
         </div>
-        <div className='d-flex flex-wrap mt-4'>
+
+       {/* input output box */}
+        <div className='mt-4 d-lg-flex'>
           <div className='inputbox mx-1'>
             <label className='d-block' htmlFor="textContent"><span className='mytap'>Text</span></label>
-              <input type="text" id="textContent" value={textContent} onChange={handleTextChange} />
+              <input type="text" id="textContent" className='myboxsize' value={textContent} onChange={handleTextChange} />
           </div>
           <div className='outputbox mx-1'>
             <span className='mytap'>PNG</span>
-            <div className='previewbox'>
+            <div className='previewbox myboxsize d-flex justify-content-center align-items-center'>
               <div
                 className='preview'
                 ref={ref}
@@ -153,7 +159,9 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <div className='d-flex justify-content-end mt-2'> 
+
+        {/* copy buttons */}
+        <div className='text-align-end d-lg-flex justify-content-center justify-content-lg-end mt-2'> 
           <button className='mybasic mybtn__red' 
           onClick={()=>{
               clipboardHandler()

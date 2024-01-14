@@ -1,7 +1,7 @@
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   min-height: 80vh;
   #textColor {
     width: 30px;
@@ -15,8 +15,8 @@ main {
       /* width: 300px; */
       /* height: 100px; */
       // vertical-align: top;
-      width: 615px;
-      height: 300px;
+      // width: 615px;
+      // height: 300px;
       border: none;
       box-shadow: 3px 5px 10px 0px rgba(0,0,0,0.55);
     }
@@ -32,14 +32,11 @@ main {
     .previewbox {
       position: relative;
       z-index: 2; 
-      width: 615px;
-      height: 300px;
+      // width: 615px;
+      // height: 300px;
       box-shadow: 3px 5px 10px 0px rgba(0,0,0,0.55);
 
       // border: 1px solid #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-image: url("../img/transparent_bg.png");
       .preview {
         // border: 1px solid #333; 
@@ -54,7 +51,7 @@ main {
   font-family: 'Pretendard-Regular', sans-serif !important;
   border: none;
   color: #000;
-  font-size: 20px;
+  font-size: 1.1rem;
   border-radius: 10px;
   box-shadow: 3px 5px 10px 0px rgba(0,0,0,0.55);
   margin: .5rem;
@@ -81,6 +78,7 @@ main {
   margin: .5rem;
 }
 .mytap {
+  margin-top: 1rem;
   border-radius: 10px 10px 0 0;
   // border-top: 1px solid #333;
   // border-left: 1px solid #333;
@@ -91,7 +89,9 @@ main {
 }
 .myoption {
   background-color: #E1F1FF;
-  font-weight: bold
+  font-weight: bold;
+  max-width: 150px;
+  
 } 
 .mybtn__white {
   background-color: #F6FBFF;
@@ -100,4 +100,26 @@ main {
 .mybtn__red {
   background-color: #FFC0C0;
   cursor: pointer;
+}
+.myboxsize {
+  // width: 615px;
+  // height: 300px;  
+  width: 100%;
+  height: 300px;
+}
+@media (min-width: 992px) {
+  .myboxsize {
+    width: 415px;
+  }
+}
+@media (min-width: 1263px) {
+  .myboxsize {
+    width: 615px;
+  }
+}
+.text-align-end {
+  text-align: end;
+}
+.text-align-center {
+  text-align: center;
 }

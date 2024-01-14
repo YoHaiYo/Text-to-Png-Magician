@@ -1,15 +1,23 @@
 header {
   /* background-color: #6FB1FF; */
   border-bottom: 2px solid darkblue;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
 }
 header ul {
-  display: flex;
+  /* display: flex; */
   list-style: none;  
   align-items: center;
   margin: 0;
 }
 header ul li {
   margin: 0 1rem;
+}
+header .logo {
+  width: 100%;
+}
+@media (min-width: 600px) {
+  header .logo {
+    width: unset;
+  }
 }

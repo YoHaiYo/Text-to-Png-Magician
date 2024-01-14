@@ -1,7 +1,4 @@
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 80vh;
 }
 main #textColor {
@@ -14,8 +11,6 @@ main #textSize {
 main .inputbox #textContent {
   /* width: 300px; */
   /* height: 100px; */
-  width: 615px;
-  height: 300px;
   border: none;
   box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.55);
 }
@@ -26,12 +21,7 @@ main .outputbox p {
 main .previewbox {
   position: relative;
   z-index: 2;
-  width: 615px;
-  height: 300px;
   box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: url("../img/transparent_bg.png");
 }
 main .previewbox .preview {
@@ -42,7 +32,7 @@ main .previewbox .preview {
   font-family: "Pretendard-Regular", sans-serif !important;
   border: none;
   color: #000;
-  font-size: 20px;
+  font-size: 1.1rem;
   border-radius: 10px;
   box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.55);
   margin: 0.5rem;
@@ -71,6 +61,7 @@ main .previewbox .preview {
 }
 
 .mytap {
+  margin-top: 1rem;
   border-radius: 10px 10px 0 0;
   display: inline-block;
   padding: 0 0.5rem;
@@ -80,6 +71,7 @@ main .previewbox .preview {
 .myoption {
   background-color: #E1F1FF;
   font-weight: bold;
+  max-width: 150px;
 }
 
 .mybtn__white {
@@ -90,4 +82,27 @@ main .previewbox .preview {
 .mybtn__red {
   background-color: #FFC0C0;
   cursor: pointer;
+}
+
+.myboxsize {
+  width: 100%;
+  height: 300px;
+}
+
+@media (min-width: 992px) {
+  .myboxsize {
+    width: 415px;
+  }
+}
+@media (min-width: 1263px) {
+  .myboxsize {
+    width: 615px;
+  }
+}
+.text-align-end {
+  text-align: end;
+}
+
+.text-align-center {
+  text-align: center;
 }
