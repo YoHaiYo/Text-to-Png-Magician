@@ -1,5 +1,6 @@
 header {
-  background-color: #6FB1FF;
+  /* background-color: #6FB1FF; */
+  border-bottom: 2px solid darkblue;
   display: flex;
   justify-content: space-between;
 }
