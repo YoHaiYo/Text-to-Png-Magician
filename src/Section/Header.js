@@ -3,7 +3,7 @@ import React from 'react'
 export default function Header() {
   return (
     <header>
-      <h1>Text to Png Magician</h1>
+      <h1><a href='/'>Text to Png Magician</a></h1>
       <ul>
         <li>Abous Us</li>
         <li>Request Us</li>        

@@ -1,16 +1,23 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import * as clipboard from 'clipboard-polyfill';
 import { ClipboardItem } from 'clipboard-polyfill';
-// import { ColorButton } from '../Component/Button';
+import fontdata from '../Data/fontdata.json'
+
 
 const Main = () => {
   const [textContent, setTextContent] = useState("MyLogo");
   const [textColor, setTextColor] = useState("black");
   const [textSize, setTextSize] = useState(50);
   const [textFamily, setTextFamily] = useState('sans-serif');
+  const [isCopy, setIsCopy] = useState(false);
 
   const ref = useRef(null);
+
+  // 다음변수들이 변경될 때마다 isCopy를 초기화하여 check 아이콘이 copy 아이콘으로 바뀜
+  useEffect(() => {
+    setIsCopy(false);
+  }, [textContent, textColor, textSize, textFamily]);
 
   const copyStyles = (source, target) => {
     Array.from(source.style).forEach((styleName) => {
@@ -65,7 +72,7 @@ const Main = () => {
 
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
-        link.download = 'my_logo.png';
+        link.download = `${textContent}.png`;
         link.click();
       });
     }
@@ -92,7 +99,7 @@ const Main = () => {
     <main>    
       <section>
         <div>
-          <label className='mybasic myoption' htmlFor="textColor">Text Color:</label>
+          <label className='mybasic myoption' htmlFor="textColor">Text Color</label>
           <button className="mycolorbtn" style={{backgroundColor: "#F01D1D"}} onClick={() => setTextColor('#F01D1D')}/>
           <button className="mycolorbtn" style={{backgroundColor: "#F09C1D"}} onClick={() => setTextColor('#F09C1D')}/>
           <button className="mycolorbtn" style={{backgroundColor: "#F0E81D"}} onClick={() => setTextColor('#F0E81D')}/>
@@ -101,7 +108,7 @@ const Main = () => {
           <input className='' type="color" id="textColor" value={textColor} onChange={handleColorChange} />
         </div>
         <div>
-          <label className='mybasic myoption' htmlFor="textSize">Text Size:</label>
+          <label className='mybasic myoption' htmlFor="textSize">Text Size</label>
           <button className="mybasic mybtn__white " onClick={() => setTextSize(50)}>50px</button>
           <button className="mybasic mybtn__white " onClick={() => setTextSize(100)}>100px</button>
           <button className="mybasic mybtn__white " onClick={() => setTextSize(150)}>150px</button>
@@ -109,30 +116,25 @@ const Main = () => {
           <span>px</span>
         </div>
         <div>
-          <label className='mybasic myoption'>Font Family</label>
-          <button
-            className={`mybasic mybtn__white ${textFamily === 'sans-serif' ? 'selected' : ''}`}
-            onClick={() => handleFontChange('sans-serif')}
-          >
-            Sans-serif
-          </button>
-          <button
-            className={`mybasic mybtn__white ${textFamily === 'serif' ? 'selected' : ''}`}
-            onClick={() => handleFontChange('serif')}
-          >
-            Serif
-          </button>
-          <button
-            className={`mybasic mybtn__white ${textFamily === 'monospace' ? 'selected' : ''}`}
-            onClick={() => handleFontChange('monospace')}
-          >
-            Monospace
-          </button>
+          <label className='mybasic myoption'>Font Family</label>      
+
+          {/* `ssh 얘는 넣을게 많으니 배열로 빼서 map으로 처리하기 */}
+          {
+            fontdata.map((el, idx)=> {
+              return (
+                <button key={idx} className={`mybasic__fontfamily mybtn__white`}
+                  style={{fontFamily: el.fontfamily}}
+                  onClick={() => handleFontChange(el.fontfamily)}
+                > {el.viewname} </button>
+              )
+            })
+          }
+
         </div>
-        <div className='d-flex mx-3'>
+        <div className='d-flex flex-wrap mt-4'>
           <div className='inputbox mx-1'>
             <label className='d-block' htmlFor="textContent"><span className='mytap'>Text</span></label>
-            <input type="text" id="textContent" value={textContent} onChange={handleTextChange} />
+              <input type="text" id="textContent" value={textContent} onChange={handleTextChange} />
           </div>
           <div className='outputbox mx-1'>
             <span className='mytap'>PNG</span>
@@ -151,8 +153,17 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <button className='mybasic mybtn__red' onClick={clipboardHandler}>Copy PNG</button>
-        <button className='mybasic mybtn__red'  onClick={saveImageHandler}>Save PNG</button>
+        <div className='d-flex justify-content-end mt-2'> 
+          <button className='mybasic mybtn__red' 
+          onClick={()=>{
+              clipboardHandler()
+              setIsCopy(true)
+            }}>
+          Copy to PNG<i className={`mx-2 ${isCopy ? "bi bi-check-lg" : "bi bi-copy"}`}></i></button>
+          
+          <button className='mybasic mybtn__red'  onClick={saveImageHandler}>
+            Save to PNG<i className="bi bi-printer mx-2"></i></button>
+        </div>
       </section>
     </main>
   );
