@@ -12,7 +12,7 @@ Leave the text-to-image conversion and style choices to us. "
 
 ## 🚀 Deployment Link 
 
-[Go to Text to Png Magician](https://texttopngmagician.netlify.app/)
+https://texttopngmagician.netlify.app/
 
 ## 📝 How to Use 
 
