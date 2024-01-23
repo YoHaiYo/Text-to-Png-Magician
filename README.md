@@ -1,6 +1,6 @@
-# Text to Png Magician
+## Introduction
 
-Text to Png Magician은 텍스트를 이미지로 변환하는 간편하고 효과적인 웹 도구입니다.
+"End the font dilemma now! With 'Text to Png Magician', effortlessly and swiftly find your style. Leave the text-to-image conversion and style choices to us."
 
 ## 주요 기능
 
