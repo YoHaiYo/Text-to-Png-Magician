@@ -1,3 +1,7 @@
+## 🚀 Deployment Link 
+
+https://texttopngmagician.netlify.app/
+
 ## 🌟 Introduction 
 
 ### "End the font dilemma now!" ### 
@@ -9,10 +13,6 @@ Leave the text-to-image conversion and style choices to us. "
 - Convert text into images
 - Support for various fonts and styles
 - Customizable color and size settings
-
-## 🚀 Deployment Link 
-
-https://texttopngmagician.netlify.app/
 
 ## 📝 How to Use 
 
