@@ -1,7 +1,7 @@
 ## 🌟 Introduction 
 
-### "End the font dilemma now!  
-With 'Text to Png Magician', effortlessly and swiftly find your style.  
+### "End the font dilemma now!" ### 
+"With 'Text to Png Magician', effortlessly and swiftly find your style.  
 Leave the text-to-image conversion and style choices to us. "
 
 ## 💡 Key Features 
