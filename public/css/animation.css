@@ -1,0 +1,67 @@
+/* 랜덤함수 클릭시 흔들기 모션 */
+.magician_shake {
+  animation-duration: 1.25s;
+  animation-name: shake;
+  box-shadow: 0px 0px 3px 3px rgba(239, 255, 16, 0.735)!important;
+}
+.magician_twinkle-up {
+  animation-duration: 1.25s;
+  animation-name: twinkle-up;
+}
+.magician_twinkle-down {
+  animation-duration: 1.25s;
+  animation-name: twinkle-down;
+}
+
+@keyframes shake {
+  
+  0% {
+    transform: rotate(-3deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes twinkle-up {
+  0% {
+    transform: translateY(3px);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  75% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes twinkle-down {
+  0% {
+    transform: translateY(-3px);
+  }
+  25% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  75% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

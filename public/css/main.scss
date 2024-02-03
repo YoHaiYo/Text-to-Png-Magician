@@ -115,11 +115,22 @@ main {
   background-color: #FFC0C0;
   cursor: pointer;
 }
+.mybtn__yellow {
+  background-color: #FFF3E1;
+  cursor: pointer;
+}
+.mybtn__puple {
+  background-color: #b294ff;
+  cursor: pointer;
+}
 .myboxsize {
   // width: 615px;
   // height: 300px;  
   width: 100%;
   height: 250px;
+}
+.fontwrap {
+  max-width: 1200px;
 }
 @media (min-width: 592px) {
   .myboxsize {
@@ -142,3 +153,5 @@ main {
 .text-align-center {
   text-align: center;
 }
+
+
