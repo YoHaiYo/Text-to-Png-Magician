@@ -2,7 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import * as clipboard from 'clipboard-polyfill';
 import { ClipboardItem } from 'clipboard-polyfill';
-import fontdata from '../Data/fontdata.json'
+import fontdata from '../Data/fontdata'
+import colordata from '../Data/colordata';
 
 
 const Main = () => {
@@ -96,44 +97,56 @@ const Main = () => {
   };
 
   return (
-    <main className='d-lg-flex justify-content-center align-item-center mt-lg-5'>    
+    <main className='d-lg-flex justify-content-center align-item-center mt-lg-5 mb-lg-5'>    
       <section>
 
         {/* text color btns */}
-        <div className='d-lg-flex'>
-          <label className='mybasic myoption d-block' htmlFor="textColor">Text Color</label>
-          <button className="mycolorbtn" style={{backgroundColor: "#F01D1D"}} onClick={() => setTextColor('#F01D1D')}/>
-          <button className="mycolorbtn" style={{backgroundColor: "#F09C1D"}} onClick={() => setTextColor('#F09C1D')}/>
-          <button className="mycolorbtn" style={{backgroundColor: "#F0E81D"}} onClick={() => setTextColor('#F0E81D')}/>
-          <button className="mycolorbtn" style={{backgroundColor: "#54F01D"}} onClick={() => setTextColor('#54F01D')}/>
-          <button className="mycolorbtn" style={{backgroundColor: "#3B1DF0"}} onClick={() => setTextColor('#3B1DF0')}/>
-          <input className='' type="color" id="textColor" value={textColor} onChange={handleColorChange} />
+        <div className='d-lg-flex align-items-center'>
+          <label className='mybasic myoption ' htmlFor="textColor">Color</label>
+          <div>            
+            {
+              colordata.map((el,idx)=>{
+                return(
+                  <React.Fragment key={idx}>
+                    <button className="mycolorbtn" style={{backgroundColor: `${el.color}`}} onClick={() => setTextColor(`${el.color}`)}/>
+                  </React.Fragment>
+                )
+              })
+            }
+            <input className='' type="color" id="textColor" value={textColor} onChange={handleColorChange} />
+          </div>
         </div>
 
         {/* test size btns */}
-        <div className='d-lg-flex'>
-          <label className='mybasic myoption d-block' htmlFor="textSize">Text Size</label>
-          <button className="mybasic mybtn__white " onClick={() => setTextSize(50)}>50px</button>
-          <button className="mybasic mybtn__white " onClick={() => setTextSize(100)}>100px</button>
-          <button className="mybasic mybtn__white " onClick={() => setTextSize(150)}>150px</button>
-          <input type="number" id="textSize" value={textSize} onChange={handleSizeChange} />
-          <span>px</span>
+        <div className='d-lg-flex align-items-center '>
+          <label className='mybasic myoption ' htmlFor="textSize">Size</label>
+          <div>
+            <button className="mybasic mybtn__white " onClick={() => setTextSize(25)}>25px</button>
+            <button className="mybasic mybtn__white " onClick={() => setTextSize(50)}>50px</button>
+            <button className="mybasic mybtn__white " onClick={() => setTextSize(75)}>75px</button>
+            <button className="mybasic mybtn__white " onClick={() => setTextSize(100)}>100px</button>
+            <button className="mybasic mybtn__white " onClick={() => setTextSize(120)}>120px</button>
+            <input type="number" id="textSize" value={textSize} onChange={handleSizeChange} />
+            <span>px</span>
+          </div>
         </div>
 
         {/* font family btns */}
-        <div className='d-lg-flex'>
-          <label className='mybasic myoption d-block'>Font Family</label>      
+        <div className='d-lg-flex align-items-center'>
+          <label className='mybasic myoption'>Font</label>      
           {/* `ssh 얘는 넣을게 많으니 배열로 빼서 map으로 처리하기 */}
-          {
-            fontdata.map((el, idx)=> {
-              return (
-                <button key={idx} className={`mybasic__fontfamily mybtn__white`}
-                  style={{fontFamily: el.fontfamily}}
-                  onClick={() => handleFontChange(el.fontfamily)}
-                > {el.viewname} </button>
-              )
-            })
-          }
+          <div>
+            {
+              fontdata.map((el, idx)=> {
+                return (
+                  <button key={idx} className={`mybasic__fontfamily mybtn__white`}
+                    style={{fontFamily: el.fontfamily}}
+                    onClick={() => handleFontChange(el.fontfamily)}
+                  > {el.viewname} </button>
+                )
+              })
+            }
+          </div>
         </div>
 
        {/* input output box */}
