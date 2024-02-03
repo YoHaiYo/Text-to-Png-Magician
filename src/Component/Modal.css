@@ -1,0 +1,16 @@
+/* Modal */
+.modal-width {
+  max-width: 90vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+@media (min-width: 992px) {
+  .modal-width {
+    max-width: 60vw !important;
+  }
+}
+
+.modal-title {
+  font-weight: bold !important;
+  font-size: 1.5rem !important;
+}

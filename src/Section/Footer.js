@@ -12,7 +12,6 @@ export default function Footer() {
       <p>developer : SimSeHoon</p>
       <p>github : https://github.com/YoHaiYo</p>
       <p>email : 12si47bun@naver.com</p>
-      <p>phone : 010-2094-5951</p>
     </footer>
   )
 }

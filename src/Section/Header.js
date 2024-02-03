@@ -1,4 +1,6 @@
 import React from 'react'
+import FontLicenseModal from '../Component/FontLicenseModal';
+import AboutUsModal from '../Component/AboutUsModal';
 
 export default function Header() {
   return (
@@ -10,8 +12,8 @@ export default function Header() {
           </a>
         </h1>
         <ul className='d-flex justify-content-around'>
-          <li><h3><a className='fw-bold' href="">About Font</a></h3></li>
-          <li><h3><a className='fw-bold' href="https://github.com/YoHaiYo/Text-to-Png-Magician">Abous Us</a></h3></li>
+          <li><FontLicenseModal/></li>
+          <li><AboutUsModal/></li>
         </ul>
     </header>
   )

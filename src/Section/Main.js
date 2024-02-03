@@ -10,7 +10,7 @@ const Main = () => {
   const [textContent, setTextContent] = useState("MyLogo");
   const [textColor, setTextColor] = useState("black");
   const [textSize, setTextSize] = useState(50);
-  const [textFamily, setTextFamily] = useState('sans-serif');
+  const [textFamily, setTextFamily] = useState('SOYOMapleBoldTTF');
   const [isCopy, setIsCopy] = useState(false);
   const [isShaking, setIsShaking] = useState(false); // 흔들림 상태 관리
 

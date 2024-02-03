@@ -47,13 +47,18 @@ main .previewbox .preview {
 .mybasic__fontfamily {
   border: none;
   color: #000;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 10px;
   box-shadow: 3px 4px 5px 0px rgba(0, 32, 136, 0.55);
   margin: 0.5rem;
   padding: 5px;
 }
 
+@media (min-width: 992px) {
+  .mybasic__fontfamily {
+    font-size: 20px;
+  }
+}
 .mycolorbtn {
   border: none;
   border-radius: 10px;
