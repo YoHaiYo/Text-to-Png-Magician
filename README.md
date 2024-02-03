@@ -2,6 +2,10 @@
 
 https://texttopngmagician.netlify.app/
 
+## 🖥️ Preview
+
+![image](https://github.com/YoHaiYo/Text-to-Png-Magician/assets/124754510/748a4c62-ce0c-46ec-adbd-ab7b934d2c7d)
+
 ## 🌟 Introduction 
 
 ### "End the font dilemma now!" ### 
